@@ -1,16 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Policy Resource for Wyoming School Districts</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Open Sans to the entire page */
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-[#000957]">
+
+    <div class="max-w-3xl mx-auto p-6 space-y-12">
+        <!-- Header -->
+        <header class="text-center py-6">
+            <img 
+                src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156170212/settings_images/864ed8-d78-d14-47ae-2f3547b2e3_6d3fb864-5820-4677-949d-33b2c72efc0d.png" 
+                alt="Logo" 
+                class="mx-auto h-16"
+            >
+        </header>
+
+        <main class="space-y-16">
+            <!-- Section 1: Lead Magnet -->
+            <section class="text-center space-y-6">
+                <h1 class="text-4xl font-bold">An AI Policy Resource for <span id="name-placeholder">[Name]</span></h1>
+                <p class="text-xl">Helping the <span id="district-placeholder-1">[District]</span> align with the latest guidance from the Wyoming Department of Education.</p>
+                <a href="https://docs.google.com/document/d/1qmq4AhGa9kWxhaF49gPQxtgfN1FOObB8fBNkdvbvuPo/copy" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#FFEB00] text-[#000957] font-bold text-lg rounded-lg py-4 px-8 transition-transform duration-200 hover:scale-105">
+                    Download Your District AI Policy Starter Kit
+                </a>
+            </section>
+
+            <hr class="border-gray-200">
+
+            <!-- Section 2: Paid App Upsell -->
+            <section class="text-center space-y-6">
+                <h2 class="text-3xl font-bold">Create <span id="district-placeholder-2">[District]</span>'s AI Policy in 5 Minutes</h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    The free starter kit provides the framework for district-level policy (and can be adapted for individual school handbooks). When you're ready to save time, use this tool to create a complete, state-compliant policy personalized for your district.
+                </p>
+                <a href="https://schoolaipolicy.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#344CB7] text-white font-bold text-lg rounded-lg py-3 px-6 transition-colors duration-200 hover:bg-[#577BC1]">
+                    Create Your Policy for $149
+                </a>
+            </section>
+            
+            <hr class="border-gray-200">
+
+            <!-- Section 3: Consulting Upsell (Symmetrical Layout) -->
+            <section class="text-center space-y-6">
+                <h2 class="text-3xl font-bold">Need Help to Make it Work?</h2>
+                <p class="text-lg">
+                    If you'd like to discuss a comprehensive AI integration plan for your district, book a free consultation with me.
+                </p>
+                <a href="https://cal.com/aaron-makelky/intro" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#344CB7] text-white font-bold text-lg rounded-lg py-3 px-6 transition-colors duration-200 hover:bg-[#577BC1]">
+                    Book a Free Strategy Call
+                </a>
+                <div class="pt-6">
+                     <img 
+                        src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2158497165/settings_images/220ff66-e783-4f6c-abc2-50ab5015ccb_Bio_Pic_blue_Square_1_.png" 
+                        alt="Profile picture of Aaron Makelky" 
+                        class="w-36 h-36 rounded-full object-cover mx-auto"
+                    >
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript for Personalization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get the URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const district = params.get('district');
+
+            // 2. Find the placeholder elements
+            const namePlaceholder = document.getElementById('name-placeholder');
+            const districtPlaceholder1 = document.getElementById('district-placeholder-1');
+            const districtPlaceholder2 = document.getElementById('district-placeholder-2');
+
+            // 3. Update the text content if the parameters exist
+            if (name && namePlaceholder) {
+                namePlaceholder.textContent = name;
+            }
+
+            if (district) {
+                if (districtPlaceholder1) {
+                    districtPlaceholder1.textContent = district;
+                }
+                if (districtPlaceholder2) {
+                    districtPlaceholder2.textContent = district;
+                }
+            }
+        });
+    </script>
+</body>
 </html>
